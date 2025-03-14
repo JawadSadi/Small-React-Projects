@@ -12,30 +12,40 @@ function Step() {
   const [day, setDay] = useState(0);
   const [step, setStep] = useState(1);
 
-  const date = new Date("march 11 2025");
+  const date = new Date();
   date.setDate(date.getDate() + day);
+
+  function handleReset() {
+    setDay(0);
+    setStep(1);
+  }
 
   return (
     <>
-      <div className="step">
-        <button
-          className="btn"
-          onClick={() => {
-            step > 1 && setStep((s) => s - 1);
-          }}
-        >
-          -
-        </button>
-        <p>Step : {step}</p>
-        <button className="btn" onClick={() => setStep((s) => s + 1)}>
-          +
-        </button>
+      <div className="rangeBox">
+        <input
+          type="range"
+          min={1}
+          max={10}
+          value={step}
+          onChange={(e) => setStep(Number(e.target.value))}
+          className="range"
+        />
       </div>
+      <span>Step : {step}</span>
+
       <div className="day">
         <button className="btn" onClick={() => setDay((d) => d - step)}>
           -
         </button>
-        <p className="step">Count : {day}</p>
+        <input
+          type="text"
+          value={day}
+          onChange={(e) => {
+            if (isNaN(e.target.value)) return;
+            setDay(Number(e.target.value));
+          }}
+        />
         <button className="btn" onClick={() => setDay((d) => d + step)}>
           +
         </button>
@@ -49,6 +59,12 @@ function Step() {
             : day + " days from today is"
         }
         ${date.toDateString()}`}</p>
+
+      {day !== 0 || step !== 1 ? (
+        <button className="btn" onClick={handleReset}>
+          Reset
+        </button>
+      ) : null}
     </>
   );
 }
