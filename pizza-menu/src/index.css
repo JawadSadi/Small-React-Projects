@@ -20,12 +20,21 @@ body {
 }
 
 .container {
-  max-width: 80rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4.8rem;
+}
+
+.container div {
+  display: flex;
+}
+
+.orderd-pizza {
+  width: 400px;
+  height: 80vh;
+  background-color: white;
 }
 
 /* *************** */
@@ -76,7 +85,6 @@ body {
 }
 
 .menu h2 {
-  display: inline-block;
   padding: 1rem 0;
   border-top: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
@@ -92,12 +100,29 @@ body {
   line-height: 1.6;
   width: 80%;
 }
+.subTitle {
+  width: 300px;
+}
 
 .pizzas {
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4.8rem;
+}
+
+.new {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.8rem;
+}
+.pizz {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  height: 80vh;
+  overflow-y: scroll;
 }
 
 .pizza {
@@ -111,7 +136,7 @@ body {
   align-self: start;
 }
 
-.pizza div {
+.details {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -171,6 +196,59 @@ body {
 
 .btn:hover {
   background-color: #e9bb24;
+}
+
+.add-order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add {
+  width: 40px;
+  text-align: center;
+  padding: 0rem 0rem;
+  font-size: 24px;
+  border-radius: 10px;
+}
+
+.orderd-pizza {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style-type: none;
+  padding: 20px 20px;
+  overflow-y: scroll;
+}
+
+.orders {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  padding: 10px 0px;
+}
+.orders p {
+  font-size: 16px;
+  width: 30%;
+}
+.order-img {
+  width: 20%;
+  border-radius: 50px;
+}
+.cancel {
+  padding: 10px 24px;
+  border-radius: 4px;
+}
+.cancel:hover {
+  background-color: rgb(180, 8, 8);
+  color: white;
+}
+.titles {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 
 /*
