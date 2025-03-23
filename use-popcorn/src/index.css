@@ -49,12 +49,20 @@ body {
   justify-content: center;
 }
 
+.load {
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  position: absolute;
+}
+
 .box {
   width: 42rem;
   max-width: 42rem;
   background-color: var(--color-background-500);
   border-radius: 0.9rem;
-  /* overflow: scroll; */
+  overflow: auto;
+
   position: relative;
 }
 
